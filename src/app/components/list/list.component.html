@@ -16,27 +16,30 @@
 </div>
 
 <div class="list">
-  <mat-list *ngIf="showResults(); else noResults">
-    <mat-list-item *ngFor="let gnome of list">
-      <img matListAvatar [src]="gnome.thumbnail">
-      <h3 matLine> {{gnome.name}} </h3>   
-      <button 
-        mat-icon-button
-        color="primary"
-        (click)="loadGnome(gnome)"
-      >
-        <mat-icon>info</mat-icon>
-      </button>
+  <mat-list role="list" *ngIf="showResults(); else noResults">
+    <mat-list-item role="listitem" *ngFor="let gnome of list">
+      <img matListItemAvatar [src]="gnome.thumbnail" [alt]="gnome.name">
+      <h3 matListItemTitle>
+        {{gnome.name}}
+        <span>
+          <button
+            mat-icon-button
+            color="primary"
+            (click)="loadGnome(gnome)">
+            <mat-icon>info</mat-icon>
+          </button>
+        </span>
+      </h3>
     </mat-list-item>
   </mat-list>
   <ng-template #noResults>
     <div class="error">
       <div class="icon">
-        <img src="../../../assets/error.icon.png">
+        <img src="../../../assets/error.icon.png" alt="error icon">
       </div>
       <div class="message">Ups! Data not found!</div>
     </div>
-  </ng-template>  
+  </ng-template>
 </div>
 
 <div class="paginator" *ngIf="showResults()">

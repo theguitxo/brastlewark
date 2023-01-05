@@ -16,6 +16,7 @@
   margin-top: 1em;
   display: flex;
   justify-content: flex-end;
+  gap: .5rem;
 
   .mat-raised-button {
     margin-left: .5em;
@@ -55,5 +56,14 @@
         padding: 2em 0;
       }
     }
+  }
+}
+
+mat-list-item {
+  h3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    justify-content: space-between;
   }
 }

@@ -1,6 +1,6 @@
 @import '../../../mixins';
 
-.mat-card {
+.mat-mdc-card {
   width: 50%;
   margin: 1em auto;
 
@@ -9,22 +9,22 @@
     margin: 1em auto;
   }
 
-  .mat-card-header {
-    margin-bottom: .5em;    
+  .mat-mdc-card-header {
+    margin-bottom: .5em;
   }
 
-  .mat-card-image {
+  .mat-mdc-card-image {
     width: 25%;
     margin: 0 auto;
     padding: 1em 0;
     display: block;
-    
+
     @include media(xs) {
       width: 100%;
     }
   }
 
-  .mat-card-content {
+  .mat-mdc-card-content {
     table {
       width: 100%;
       th {
@@ -40,15 +40,14 @@
     }
   }
 
-  .mat-chip-list {
-    .mat-chip {
-      cursor: pointer;
-    }
+  .mat-mdc-card-actions {
+    justify-content: end;
+    padding-bottom: 1em;
+    padding-right: 1em;
+    gap: .5rem;
   }
 
-  .mat-card-actions {
-    text-align: right;
-    padding-bottom: 1em;
-    padding-right: .5em;
+  .mat-mdc-chip-row {
+      margin: 0 .5rem .5rem 0;
   }
 }

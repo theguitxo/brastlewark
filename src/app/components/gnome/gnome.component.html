@@ -3,10 +3,10 @@
     <mat-card-title>{{ gnome.name }}</mat-card-title>
   </mat-card-header>
   <mat-divider></mat-divider>
-  <img mat-card-image [src]="gnome.thumbnail">
+  <img mat-card-image [src]="gnome.thumbnail" [alt]="gnome.name">
   <mat-divider></mat-divider>
   <mat-card-content>
-    <table>
+    <table aria-describedby="table">
       <tr>
         <th>Age</th>
         <td>{{ gnome.age | number }}</td>
@@ -26,13 +26,11 @@
       <tr>
         <th [ngClass]="{ 'top' : gnomeHasWork() }">Professions</th>
         <td>
-          <mat-chip-list
-            *ngIf="gnomeHasWork(); else noWork"
-          >
-            <mat-chip *ngFor="let work of gnome.professions" color="primary" selected>
+          <ng-container *ngIf="gnomeHasWork(); else noWork">
+            <mat-chip-row *ngFor="let work of gnome.professions" color="primary">
               {{ work }}
-            </mat-chip>
-          </mat-chip-list>
+            </mat-chip-row>
+          </ng-container>
           <ng-template #noWork>
             <span>This gnome hasn't work</span>
           </ng-template>
@@ -41,11 +39,11 @@
       <tr>
         <th [ngClass]="{ 'top' : gnomeHasFriends() }">Friends</th>
         <td>
-          <mat-chip-list *ngIf="gnomeHasFriends(); else noFriends">
-            <mat-chip color="warn" selected (click)="showFriend(friend)" *ngFor="let friend of gnome.friends">
+          <ng-container *ngIf="gnomeHasFriends(); else noFriends">
+            <mat-chip-row (click)="showFriend(friend)" *ngFor="let friend of gnome.friends">
               {{ friend }}
-            </mat-chip>
-          </mat-chip-list>
+            </mat-chip-row>
+          </ng-container>
           <ng-template #noFriends>
             <span>This gnome hasn't friends</span>
           </ng-template>
