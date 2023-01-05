@@ -15,7 +15,7 @@ git clone https://github.com/theguitxo/brastlewark.git
 Then enter in the folder of the app
 
 ~~~
-cd brastlewark-a9
+cd brastlewark
 ~~~
 
 Launch the development server with
@@ -34,4 +34,4 @@ https://localhost:4200
 
 You can see a demo in this URL
 
-[Demo](http://brastlewark.guitxo.com)
+[Demo](https://theguitxo.github.io/brastlewark/)
